@@ -1,0 +1,33 @@
+.site-header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .header-nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header-nav ul li {
+    margin-left: 20px;
+  }
+  
+  .header-nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .header-nav ul li a:hover {
+    color: #04c;
+  }
+  
