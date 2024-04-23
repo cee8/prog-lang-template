@@ -1,8 +1,8 @@
 {
-  "name": "rat-language.github.io",
+  "name": "my-new-project",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://rat-language.github.io/",
+  "homepage": "https://my-new-project.github.io/",
   "dependencies": {
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
