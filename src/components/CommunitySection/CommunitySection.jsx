@@ -51,7 +51,7 @@ const CommunitySection = () => {
       avatar: 'path/to/john-doe-avatar.jpg',
       github: 'https://github.com/cee8',
       linkedin: 'https://www.linkedin.com/in/-beaudoin',
-      twitter: 'https://twitter.com/chris-beauds',
+      twitter: 'https://twitter.com/chris_beauds',
     },
     {
       name: 'Jane Smith',

@@ -1,6 +1,6 @@
 # Programming Languages Showcase Template
 
-This project provides a comprehensive template for showcasing various programming languages. It features a three-page layout: a home page, a virtual IDE for live coding, and a documentation/getting started guide. Ideal for developers looking to explore or demonstrate different programming technologies.
+This project provides a comprehensive template for showcasing various programming languages. It features a three-page layout: a home page, a virtual IDE for the live coding, and a documentation/getting started guide. Ideal for developers looking to explore or demonstrate different programming technologies.
 
 ## Features
 
