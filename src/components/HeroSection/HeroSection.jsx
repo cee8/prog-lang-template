@@ -1,6 +1,5 @@
 import React from 'react';
-import { Typography, Button, Box, Container, styled } from '@mui/material';
-import { keyframes } from '@mui/system';
+import { Typography, Button, Box, Container, styled, keyframes } from '@mui/material';
 import { Link } from 'react-router-dom';
 import './heroSection.css';
 
@@ -16,9 +15,8 @@ const fadeIn = keyframes`
 `;
 
 const HeroContainer = styled(Box)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
-  background: 'linear-gradient(45deg, #6a11cb 0%, #2575fc 100%)',
-  color: theme.palette.primary.contrastText,
+  background: 'linear-gradient(135deg, #ff9a9e 0%, #fad0c4 99%, #fad0c4 100%)', // Gradient background
+  color: theme.palette.text.primary,
   paddingTop: theme.spacing(25),
   paddingBottom: theme.spacing(12),
   textAlign: 'center',
@@ -27,11 +25,24 @@ const HeroContainer = styled(Box)(({ theme }) => ({
   marginLeft: '-50vw',
   left: '50%',
   width: '100vw',
+  minHeight: '10vh',
+  '&::before': {
+    content: '""',
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    width: '100%',
+    height: '100%',
+    background: 'url(https://www.transparenttextures.com/patterns/bokeh.png)',
+    opacity: 0.4, // Adjust the opacity to make the bokeh effect visible
+    zIndex: 0,
+  },
 }));
 
 const HeroContent = styled(Container)(({ theme }) => ({
-  zIndex: 1,
+  zIndex: 2,
   position: 'relative',
+  animation: `${fadeIn} 1.5s ease-in-out`,
 }));
 
 const HeroTitle = styled(Typography)(({ theme }) => ({
@@ -61,29 +72,10 @@ const HeroButton = styled(Button)(({ theme }) => ({
   },
 }));
 
-const HeroBackground = styled(Box)(({ theme }) => ({
-  position: 'absolute',
-  top: 0,
-  left: 0,
-  width: '100%',
-  height: '100%',
-  '&::before': {
-    content: '""',
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    width: '100%',
-    height: '100%',
-    background: 'rgba(0, 0, 0, 0.5)',
-    zIndex: 1,
-  },
-}));
-
 const HeroSection = () => {
   return (
     <HeroContainer>
-      <HeroBackground />
-      <HeroContent maxWidth={false}>
+      <HeroContent maxWidth="md">
         <HeroTitle variant="h2">Welcome to My Programming Language</HeroTitle>
         <HeroSubtitle variant="h5">
           The next-generation language for innovative and efficient software development.
@@ -97,3 +89,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+
