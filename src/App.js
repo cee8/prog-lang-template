@@ -1,116 +1,40 @@
-// src/pages/CompilationPage/CompilationPage.jsx
-import React, { useState } from 'react';
-import { Box, Typography, TextField, Button, Paper, styled } from '@mui/material';
-import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { atomDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import axios from 'axios';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Header from './components/Header/Header';
+import Footer from './components/Footer/Footer'; // Adjust the path as necessary
+import HomePage from './pages/HomePage/HomePage'; // Adjust the path according to your project structure
+import DocsPage from './pages/DocsPage/DocsPage';
+import GettingStarted from './pages/GettingStartedPage/GettingStartedPage';
+import LanguageSyntax from './pages/LanguageSyntaxPage/LanguageSyntaxPage';
+import StandardLibrary from './pages/StandardLibraryPage/StandardLibraryPage';
+import CompilationPage from './pages/CompilationPage/CompilationPage';
+import { ThemeProvider } from '@mui/material/styles';
+import Box from '@mui/material/Box';
 
-const CompilationContainer = styled(Box)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'center',
-  alignItems: 'center',
-  minHeight: '100vh',
-  backgroundColor: theme.palette.grey[100],
-  marginBottom: -9,
-}));
+import theme from './styles/theme'; // replace with the path to your theme file
 
-const FloatingWindow = styled(Paper)(({ theme }) => ({
-  display: 'flex',
-  flexDirection: 'row',
-  width: '98%',
-  height: '80vh',
-  borderRadius: theme.spacing(2),
-  boxShadow: theme.shadows[8],
-  overflow: 'hidden',
-}));
-
-const EditorContainer = styled(Box)(({ theme }) => ({
-  flex: 1,
-  padding: theme.spacing(3),
-  backgroundColor: theme.palette.grey[100],
-}));
-
-const OutputContainer = styled(Box)(({ theme }) => ({
-  flex: 1,
-  padding: theme.spacing(3),
-  backgroundColor: theme.palette.grey[900],
-  color: theme.palette.common.white,
-}));
-
-const CodeInput = styled(TextField)(({ theme }) => ({
-  '& .MuiInputBase-root': {
-    fontFamily: 'monospace',
-    fontSize: '1rem',
-  },
-}));
-
-const OutputBox = styled(Box)(({ theme }) => ({
-  fontFamily: 'monospace',
-  fontSize: '1rem',
-  overflow: 'auto',
-  marginTop: theme.spacing(2),
-}));
-
-const CompileButton = styled(Button)(({ theme }) => ({
-  marginTop: theme.spacing(2),
-  backgroundColor: '#ff416c',
-  '&:hover': {
-    backgroundColor: '#e03560', // Darker shade for hover
-  },
-  width: '100%'
-}));
-
-const CompilationPage = () => {
-  const [code, setCode] = useState('');
-  const [output, setOutput] = useState('');
-
-  const handleCompile = async () => {
-    try {
-      const response = await axios.post(`${process.env.REACT_APP_API_URL || 'http://localhost:4000'}/compile`, {
-        code,
-        outputType: 'js' // Adjust this as necessary for your application
-      });
-      console.log("Response Data:", response.data); // Log the response data
-      setOutput(response.data.output || "No output returned."); // Handle undefined or null output
-    } catch (error) {
-      console.error("Request Failed:", error);
-      setOutput(`Compilation Error: ${error.response ? error.response.data.error : error.message}`);
-    }
-  };
-
+function App() {
   return (
-    <CompilationContainer>
-      <FloatingWindow>
-        <EditorContainer>
-          <Typography variant="h6" gutterBottom>
-            Code Editor
-          </Typography>
-          <CodeInput
-            multiline
-            rows={20}
-            placeholder="Enter your code here"
-            value={code}
-            onChange={(e) => setCode(e.target.value)}
-            fullWidth
-          />
-          <CompileButton variant="contained" color="primary" onClick={handleCompile}>
-            Compile and Run
-          </CompileButton>
-        </EditorContainer>
-        <OutputContainer>
-          <Typography variant="h6" gutterBottom>
-            Output
-          </Typography>
-          <OutputBox>
-            <SyntaxHighlighter language="text" style={atomDark}>
-              {output}
-            </SyntaxHighlighter>
-          </OutputBox>
-        </OutputContainer>
-      </FloatingWindow>
-    </CompilationContainer>
+    <ThemeProvider theme={theme}>
+      <Router>
+        <Box display="flex" flexDirection="column" minHeight="100vh">
+          <Header />
+          <Box component="main" flexGrow={1}>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/compile" element={<CompilationPage />} />
+              <Route path="/docs" element={<DocsPage />} />
+              <Route path="/docs/getting-started" element={<GettingStarted />} />
+              <Route path="/docs/syntax" element={<LanguageSyntax />} />
+              <Route path="/docs/standard-library" element={<StandardLibrary />} />
+              {/* Future routes will go here */}
+            </Routes>
+          </Box>
+          <Footer />
+        </Box>
+      </Router>
+    </ThemeProvider>
   );
-};
+}
 
-export default CompilationPage;
-
+export default App;

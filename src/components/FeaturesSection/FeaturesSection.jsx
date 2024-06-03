@@ -27,11 +27,11 @@ const Feature = styled(Box)(({ theme }) => ({
 }));
 
 const FeatureIcon = styled(IconButton)(({ theme }) => ({
-  backgroundColor: theme.palette.primary.main,
+  backgroundColor: '#ff416c',
   color: theme.palette.getContrastText(theme.palette.primary.main),
   marginBottom: theme.spacing(2),
   '&:hover': {
-    backgroundColor: theme.palette.primary.dark,
+    backgroundColor: '#ef416c',
   },
   fontSize: '48px',
 }));
