@@ -16,7 +16,7 @@ Check out the live example here: [PLangTemplate Live Demo](https://main.dq6ubbz1
 ## Screenshots
 
 ### Home Page
-Showcases the introductory page of the website, highlighting featured programming languages.
+Showcases the introductory page of the website, highlighting featured of your programming language.
 
 ![Home Page](cee8-pLangTemplate-screenshots/cee8-pLangTemplate-home.png)
 
@@ -26,7 +26,7 @@ Displays the page where users can write, edit, and run code.
 ![Compilation Page](cee8-pLangTemplate-screenshots/cee8-pLangTemplate-compilePage.png)
 
 ### Example Section
-Shows the example section within the documentation or IDE page.
+Shows the example section within the home-page.
 
 ![Example Section](cee8-pLangTemplate-screenshots/cee8-pLangTemplate-exampleSection.png)
 
