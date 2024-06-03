@@ -2,11 +2,40 @@
 
 This project provides a comprehensive template for showcasing various programming languages. It features a three-page layout: a home page, a virtual IDE for the live coding, and a documentation/getting started guide. Ideal for developers looking to explore or demonstrate different programming technologies.
 
+
 ## Features
 
 - **Home Page:** Introduces the purpose of the website and highlights featured programming languages.
 - **Virtual IDE:** A browser-based IDE where users can write, edit, and run code in various programming languages.
 - **Documentation/Getting Started:** Provides essential information on how to use the platform, including code examples and tutorials.
+
+## Live Demo
+
+Check out the live example here: [PLangTemplate Live Demo](https://main.dq6ubbz1oqd87.amplifyapp.com)
+
+## Screenshots
+
+### Home Page
+Showcases the introductory page of the website, highlighting featured of your programming language.
+
+![Home Page](cee8-pLangTemplate-screenshots/cee8-pLangTemplate-home.png)
+
+### Compilation Page
+Displays the page where users can write, edit, and run code.
+
+![Compilation Page](cee8-pLangTemplate-screenshots/cee8-pLangTemplate-compilePage.png)
+
+### Example Section
+Shows the example section within the home-page.
+
+![Example Section](cee8-pLangTemplate-screenshots/cee8-pLangTemplate-exampleSection.png)
+
+### Documentation Page
+Provides a glimpse of the documentation section, including code examples and tutorials.
+
+![Documentation Page](cee8-pLangTemplate-screenshots/cee8-pLangTemplate-docsPage.png)
+
+
 
 ## Prerequisites
 
