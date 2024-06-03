@@ -32,12 +32,6 @@ const CodeExampleDescription = styled(Typography)(({ theme }) => ({
 const CodeExamplesSection = () => {
   const codeExamples = [
     {
-      title: 'Hello World',
-      description: 'A simple "Hello, World!" program in MyLanguage.',
-      code: `print("Hello, World!")`,
-      image: 'path/to/hello-world-image.jpg',
-    },
-    {
       title: 'Fibonacci Sequence',
       description: 'Generating the Fibonacci sequence in MyLanguage.',
       code: `function fibonacci(n) {
@@ -52,19 +46,40 @@ for (let i = 0; i < 10; i++) {
 }`,
       image: 'path/to/fibonacci-image.jpg',
     },
+
+      
+    //PRIME
+    {
+      title: 'Prime Number Checker',
+      description: 'A function to check if a number is prime in Rat-language.',
+      code: `bool prime(n:int){
+        if (n % 2 == 0) || (n % 3 == 0) { return false; }
+        while i*i <= n {
+          if (n%i==0) || (n%(i+2) ==0) {
+              return false;
+            }
+            i += 6;
+        }
+        return true;
+    }`,
+      image: 'path/to/prime-image.jpg',
+    },
+    //FACTORIAL
     {
         title: 'Factorial',
-        description: 'Generating the Factorials MyLanguage.',
-        code: `function fibonacci(n) {
-    if (n <= 1) {
-      return n;
-    }
-    return fibonacci(n - 1) + fibonacci(n - 2);
-  }
-  
-  for (let i = 0; i < 10; i++) {
-    print(fibonacci(i));
+        description: 'Computing Factorials Rat-language.',
+        code: `int factorial(n:int){
+          var value: int = 1;
+          if (n != 0 && n != 1){
+              for i in 2...n {
+                  value *= i;
+              }
+          }
+          return value;
+      }
+      print(factorial(5));
   }`,
+
         image: 'path/to/fibonacci-image.jpg',
       },
     

@@ -7,7 +7,7 @@ import SpeedIcon from '@mui/icons-material/Speed'; // For performance features
 import SecurityIcon from '@mui/icons-material/Security'; // For security features
 import GroupIcon from '@mui/icons-material/Group'; // For community or collaborative features
 import ExtensionIcon from '@mui/icons-material/Extension'; // For extensibility or plugin features
-
+import CodeIcon from '@mui/icons-material/Code';
 
 const SectionTitle = styled(Typography)(({ theme }) => ({
   marginBottom: theme.spacing(6),
@@ -67,11 +67,11 @@ const features = [
     Icon: ExtensionIcon,
   },
   {
-    title: 'Extensibility',
-    description: 'Easily extend and customize with plugins and integrations.',
-    Icon: ExtensionIcon,
+    title: 'Familiar Syntax',
+    description: 'Easy-to-understand syntax that is similar to popular programming languages.',
+    Icon: CodeIcon,
   },
-  // Add more features as needed
+
 ];
 
 const FeaturesSection = () => {

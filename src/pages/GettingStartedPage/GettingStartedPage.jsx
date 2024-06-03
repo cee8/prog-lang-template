@@ -1,7 +1,7 @@
 import React from 'react';
 import {
   Container, Typography, Box, Grid, Accordion, AccordionSummary, AccordionDetails, 
-  IconButton, Tooltip, Link, styled
+  IconButton, Tooltip, Link, styled, Divider
 } from '@mui/material';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import CodeIcon from '@mui/icons-material/Code';
@@ -12,8 +12,13 @@ const CustomContainer = styled(Container)(({ theme }) => ({
   marginBottom: theme.spacing(10),
 }));
 
+const CustomGrid = styled(Grid)(({ theme }) => ({
+  marginTop: theme.spacing(2),
+  marginBottom: theme.spacing(2),
+}));
+
 const Highlight = styled(Typography)(({ theme }) => ({
-  background: `linear-gradient(45deg, ${theme.palette.secondary.light} 30%, ${theme.palette.secondary.main} 90%)`,
+  background: `linear-gradient(45deg, ${'#ff416c'} 30%, ${'#ef416c'} 90%)`,
   '-webkit-background-clip': 'text',
   '-webkit-text-fill-color': 'transparent',
 }));
@@ -32,10 +37,10 @@ const GettingStarted = () => {
     <CustomContainer maxWidth="lg">
       <Box textAlign="center" marginBottom={4}>
         <Highlight variant="h2" component="div" gutterBottom>
-          Getting Started with YourLanguageName
+          Getting Started with the Language
         </Highlight>
         <Typography variant="h6" color="textSecondary" component="p">
-          Dive into the simplicity and power of YourLanguageName. Start building right away.
+          Dive into the simplicity and power of the language. Start building right away.
         </Typography>
       </Box>
 
@@ -43,14 +48,26 @@ const GettingStarted = () => {
         <Grid item xs={12} md={6}>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">1. Installation</Typography>
+              <Box sx={{ width: '100%' }}>
+                <Typography variant="h6">1. Understanding the structure</Typography>
+                <Typography variant="body1" sx={{ mt: 1 }}>
+                  Explore the main components of the organization. Learn about our main repositories and their purpose within our ecosystem. See more below:
+                </Typography>
+              </Box>
             </AccordionSummary>
+            <Divider />
             <AccordionDetails>
               <Typography paragraph>
-                Begin by downloading the YourLanguageName compiler or interpreter from the official [source]. Make sure to verify the system requirements before installation.
+                <strong>The Language Repository:</strong> This is the core language repository, where the language's syntax and core functionalities are developed. More details are available <Link href="https://github.com/language-repo" target="_blank" rel="noopener">here</Link>.
               </Typography>
               <Typography paragraph>
-                For detailed installation instructions, refer to our <Link href="#">installation guide</Link>.
+                <strong>The Online Compiler:</strong> Hosted in the <Link href="https://github.com/output-backend" target="_blank" rel="noopener">output-backend</Link> repository, this tool allows users to compile and run language code directly in their web browsers.
+              </Typography>
+              <Typography paragraph>
+                <strong>The Website:</strong> Managed under the <Link href="https://github.com/language-website" target="_blank" rel="noopener">language-website</Link> repository, it serves as the primary informational and documentation hub for the language.
+              </Typography>
+              <Typography paragraph>
+                For a detailed overview of the language, refer to our <Link href="https://github.com/language-repo/README.md">README</Link> or our <Link href="/docs/syntax">Language Syntax</Link> page.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -59,11 +76,23 @@ const GettingStarted = () => {
         <Grid item xs={12} md={6}>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">2. Setup Your Environment</Typography>
+              <Box sx={{ width: '100%' }}>
+                <Typography variant="h6">2. Setup Your Environment</Typography>
+                <Typography variant="body1" sx={{ mt: 1 }}>
+                  You can either use the <Link href="/compile">Online Compiler</Link> or set up your local development environment. To set up your local environment, follow the steps below:
+                </Typography>
+              </Box>
             </AccordionSummary>
+            <Divider />
             <AccordionDetails>
               <Typography paragraph>
-                Setting up your development environment is crucial for a seamless coding experience. Follow our comprehensive setup guide to configure your IDE, set environment variables, and more.
+                <strong>Step 1:</strong> In the <Link href="https://github.com/language-repo" target="_blank" rel="noopener">Language Repository</Link>, you will find the main files under the src. The files that can be found there are analyzer.js, compiler.js, core.js, generator.js, optimizer.js, parser.js, language.js, and language.ohm.
+              </Typography>
+              <Typography paragraph>
+                <strong>Step 2:</strong> These files can be used in your local development environment. Clone the repository and set up your local environment to start developing in the language.
+              </Typography>
+              <Typography paragraph>
+                <strong>Step 3:</strong> To compile and run your code, use the command <code>node compiler.js yourFile.language</code> in your terminal.
               </Typography>
               <Typography paragraph>
                 Access the full setup guidelines <Link href="#">here</Link>.
@@ -75,23 +104,24 @@ const GettingStarted = () => {
         <Grid item xs={12}>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">3. Write Your First Program</Typography>
+              <Box sx={{ width: '100%' }}>
+                <Typography variant="h6">3. Write your first program</Typography>
+                <Typography variant="body1" sx={{ mt: 1 }}>
+                  Writing your first program in the language is simple and fun. Let's get started!
+                </Typography>
+              </Box>
             </AccordionSummary>
+            <Divider />
             <AccordionDetails>
               <Typography paragraph>
-                Your first program in YourLanguageName will be the classic "Hello, World!". Open your text editor or IDE, create a new file named 'helloWorld.yln', and enter the following code:
+                Your first program in the language will be the classic "Hello, World!". Open your text editor or IDE, create a new file named 'helloWorld.language', and enter the following code:
               </Typography>
               <CodeBlock>
-                # YourLanguageName syntax for Hello World<br />
-                print("Hello, World!")
+                // Language syntax for Hello World<br />
+                print("Hello, World!");
               </CodeBlock>
-              <Tooltip title="Run your code">
-                <IconButton color="primary">
-                  <PlayCircleFilledIcon />
-                </IconButton>
-              </Tooltip>
               <Typography paragraph>
-                Save your file and run it using the command line or your IDE's run feature. Congratulations, you've just written and executed your first YourLanguageName program!
+                Run it using the "compile and run button" or your IDE's run feature. Congratulations, you've just written and executed your first program in the language!
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -100,19 +130,17 @@ const GettingStarted = () => {
         <Grid item xs={12}>
           <Accordion>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              <Typography variant="h6">4. Explore Language Features</Typography>
+              <Box sx={{ width: '100%' }}>
+                <Typography variant="h6">4. Explore Language Features</Typography>
+                <Typography paragraph>
+                  The language comes packed with features designed to make development intuitive and efficient.
+                </Typography>
+              </Box>
             </AccordionSummary>
+            <Divider />
             <AccordionDetails>
               <Typography paragraph>
-                YourLanguageName comes packed with features designed to make development intuitive and efficient. Here are some key features you might find interesting:
-              </Typography>
-              <CodeBlock>
-                # Feature 1: Example Code<br />
-                # Feature 2: Example Code<br />
-                # Feature 3: Example Code
-              </CodeBlock>
-              <Typography paragraph>
-                Dive deeper into these features and discover more by checking out our <Link href="#">full documentation</Link>.
+                To learn more about them, dive deeper into the features and discover more by checking out our <Link href="/docs/syntax">syntax</Link> and <Link href="/">homepage</Link>.
               </Typography>
             </AccordionDetails>
           </Accordion>
@@ -123,3 +151,4 @@ const GettingStarted = () => {
 };
 
 export default GettingStarted;
+
