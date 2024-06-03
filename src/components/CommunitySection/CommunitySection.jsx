@@ -45,13 +45,13 @@ const SocialLinks = styled(Box)(({ theme }) => ({
 const CommunitySection = () => {
   const teamMembers = [
     {
-      name: 'John Doe',
-      role: 'Founder & CEO',
+      name: 'Chris Beaudoin',
+      role: 'The creator',
       bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna a bibendum bibendum, augue magna tincidunt enim, eget ultricies magna augue eget risus.',
       avatar: 'path/to/john-doe-avatar.jpg',
-      github: 'https://github.com/johndoe',
-      linkedin: 'https://www.linkedin.com/in/johndoe',
-      twitter: 'https://twitter.com/johndoe',
+      github: 'https://github.com/cee8',
+      linkedin: 'https://www.linkedin.com/in/-beaudoin',
+      twitter: 'https://twitter.com/chris-beauds',
     },
     {
       name: 'Jane Smith',

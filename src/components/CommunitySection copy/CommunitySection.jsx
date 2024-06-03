@@ -33,7 +33,7 @@ const TeamMemberBio = styled(Typography)(({ theme }) => ({
 const CommunitySection = () => {
   const teamMembers = [
     {
-      name: 'John Doe',
+      name: 'Chris Beaudoin',
       role: 'Founder & CEO',
       bio: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed auctor, magna a bibendum bibendum, augue magna tincidunt enim, eget ultricies magna augue eget risus.',
       avatar: 'path/to/john-doe-avatar.jpg',
