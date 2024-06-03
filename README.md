@@ -5,7 +5,7 @@ This project provides a comprehensive template for showcasing various programmin
 
 ## Features
 
-- **Home Page:** Introduces the purpose of the website and highlights featured programming languages.
+- **Home Page:** Introduces the purpose of the programming language and highlights featured programming languages.
 - **Virtual IDE:** A browser-based IDE where users can write, edit, and run code in various programming languages.
 - **Documentation/Getting Started:** Provides essential information on how to use the platform, including code examples and tutorials.
 
